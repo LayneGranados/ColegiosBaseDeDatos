@@ -250,7 +250,7 @@ CREATE TABLE colegio
 	nombre VARCHAR(50) NOT NULL,
 	codigo_dane VARCHAR(50) NOT NULL,
 	dane_anterior VARCHAR(50),
-	patch_logo TEXT,
+	path_logo TEXT,
 	ruta_archivos_generados TEXT,
 	telefono VARCHAR(50),
 	direccion TEXT,
