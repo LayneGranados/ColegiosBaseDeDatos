@@ -249,9 +249,16 @@ CREATE TABLE colegio
 	colegio_id INTEGER NOT NULL AUTO_INCREMENT,
 	nombre VARCHAR(50) NOT NULL,
 	codigo_dane VARCHAR(50) NOT NULL,
+	dane_anterior VARCHAR(50),
+	patch_logo TEXT,
+	ruta_archivos_generados TEXT,
+	telefono VARCHAR(50),
+	direccion TEXT,
+	municipio_id INTEGER,
 	PRIMARY KEY (colegio_id),
 	UNIQUE UQ_colegio_codigo_dane(codigo_dane),
-	UNIQUE UQ_colegio_colegio_id(colegio_id)
+	UNIQUE UQ_colegio_colegio_id(colegio_id),
+	KEY (municipio_id)
 
 ) COLLATE utf8_general_ci ENGINE=InnoDB
 ;
@@ -813,6 +820,10 @@ ALTER TABLE calificacion ADD CONSTRAINT FK_calificacion_asignatura_curso
 ALTER TABLE calificacion ADD CONSTRAINT FK_calificacion_boletin 
 	FOREIGN KEY (boletin_id) REFERENCES boletin (boletin_id)
 	ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE colegio ADD CONSTRAINT FK_municipio_id 
+	FOREIGN KEY (municipio_id) REFERENCES municipio (municipio_id)
 ;
 
 ALTER TABLE curso ADD CONSTRAINT FK_caracter_id 
