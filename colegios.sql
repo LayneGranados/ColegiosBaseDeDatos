@@ -543,7 +543,8 @@ CREATE TABLE municipio
 	nombre VARCHAR(50) NOT NULL,
 	departamento_id INTEGER NOT NULL,
 	PRIMARY KEY (municipio_id),
-	UNIQUE UQ_municipio_municipio_id(municipio_id)
+	UNIQUE UQ_municipio_municipio_id(municipio_id),
+	KEY (departamento_id)
 
 ) COLLATE utf8_general_ci ENGINE=InnoDB
 ;
@@ -914,6 +915,10 @@ ALTER TABLE logros ADD CONSTRAINT FK_logros_tipo_logro
 ALTER TABLE matricula ADD CONSTRAINT FK_matricula_estudiante 
 	FOREIGN KEY (estudiante_id) REFERENCES estudiante (estudiante_id)
 	ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE municipio ADD CONSTRAINT FK_departamento_id 
+	FOREIGN KEY (departamento_id) REFERENCES departamento (departamento_id)
 ;
 
 ALTER TABLE periodo ADD CONSTRAINT FK_periodo_jornada 
