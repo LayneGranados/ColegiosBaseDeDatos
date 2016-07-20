@@ -690,7 +690,7 @@ CREATE TABLE tipo_documento
 CREATE TABLE tipo_jornada
 (
 	tipo_jornada_id INTEGER NOT NULL AUTO_INCREMENT,
-	nombre BIGINT NOT NULL,
+	nombre VARCHAR(40) NOT NULL,
 	PRIMARY KEY (tipo_jornada_id),
 	UNIQUE UQ_tipo_jornada_tipo_jornada_id(tipo_jornada_id)
 
@@ -701,7 +701,7 @@ CREATE TABLE tipo_jornada
 CREATE TABLE tipo_logro
 (
 	tipo_logo_id INTEGER NOT NULL AUTO_INCREMENT,
-	nombre VARCHAR(50),
+	nombre VARCHAR(40),
 	PRIMARY KEY (tipo_logo_id),
 	UNIQUE UQ_tipo_logro_tipo_logo_id(tipo_logo_id)
 
