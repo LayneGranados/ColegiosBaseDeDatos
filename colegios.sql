@@ -617,6 +617,7 @@ CREATE TABLE sede
 	municipio_id INTEGER NOT NULL,
 	antiguo_codigo_dane VARCHAR(50) NOT NULL,
 	consecutivo INTEGER NOT NULL,
+	nombre VARCHAR(100) NOT NULL,
 	PRIMARY KEY (sede_id),
 	UNIQUE UQ_Sede_antiguo_codigo_dane(antiguo_codigo_dane),
 	UNIQUE UQ_Sede_sede_id(sede_id),
