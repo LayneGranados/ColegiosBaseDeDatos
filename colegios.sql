@@ -420,8 +420,8 @@ CREATE TABLE fuentes_recursos
 CREATE TABLE grado
 (
 	grado_id INTEGER NOT NULL AUTO_INCREMENT,
-	nombre VARCHAR(25),
-	jornada_id INTEGER,
+	nombre VARCHAR(25) NOT NULL,
+	jornada_id INTEGER NOT NULL,
 	codigo VARCHAR(2),
 	PRIMARY KEY (grado_id),
 	UNIQUE UQ_grado_grado_id(grado_id),
